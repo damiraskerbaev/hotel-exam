@@ -4,40 +4,43 @@
 {% endblock title %}
 
 {% block style %}
-
-    <style>
-        
-        .image_class{
-        margin: left;
+<style>
+    .room-container {
         display: flex;
-        height: 200px;
-        }
-
-        h1 {
-        text-align: auto;
-        text-decoration: none;
-        }
-
-    </style>
-
+        margin-bottom: 20px;
+    }
+    .room-container img {
+        height: 300px;
+        margin-right: 20px;
+    }
+    .room-container div {
+        flex-grow: 1;
+    }
+    .room-container h1, .room-container h2, .room-container h3, .room-container p {
+        font-size: 25px;
+    }
+</style>
 {% endblock style %}
 
 {% block content %}
-
-        
-        {% for room in rooms %}
+    {% for room in rooms %}
+        <div class="room-container">
             <img src="{{ room.image.url }}" alt="" class="image_class">
-            <h1>Hotel name: {{ room.Hotel }}</h1>
-            <h1>Number room: {{ room.number }}</h1>
-            <h1>Capacity: {{ room.capacity }}</h1>
-            <h3>{% if room.is_used %}
-                <p>Used: YES</p>
-            {% else %}
-                <p>Used: NO</p>
-            {% endif %}
-            </h3>
-            <h2>Description: {{ room.description }}</h2>
-        {% endfor %}
-        
-        
+            <div>
+                <h1>Hotel name: {{ room.Hotel }}</h1>
+                <p>Number room: {{ room.number }}</p>
+                <p>Capacity: {{ room.capacity }}</p>
+                <h3>{% if room.is_used %}
+                    <p>Used: YES</p>
+                {% else %}
+                    <p>Used: NO</p>
+                {% endif %}
+                </h3>
+                <h2>Description: {{ room.description }}</h2>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock content %}
+
+
+

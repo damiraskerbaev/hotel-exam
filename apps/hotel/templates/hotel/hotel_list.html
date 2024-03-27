@@ -1,43 +1,40 @@
 {% extends 'base.html' %}
 {% block title %}
-
     HOTELS
-
 {% endblock title %}
 
 {% block style %}
-
-    <style>
-        
-        div .image_class{
-        margin: left;
+<style>
+    .hotel-container {
         display: flex;
-        height: 200px;
-        }
-
-        div h1 {
-        text-align: auto;
-        text-decoration: none;
-        }
-
-    </style>
-
+        margin-bottom: 20px;
+    }
+    .hotel-container img {
+        height: 300px;
+        margin-right: 20px;
+    }
+    .hotel-container div {
+        flex-grow: 1;
+    }
+    .hotel-container h1, .hotel-container p {
+        font-size: 25px;
+    }
+</style>
 {% endblock style %}
 
 {% block content %}
-
     {% for hotel in hotels %}
-
-        <div>
+        <div class="hotel-container">
             <img src="{{ hotel.image.url }}" alt="" class="image_class">
-            <h1>Hotel: {{ hotel.name }}</h1>
-            <h1>Address: {{ hotel.address }}</h1>
-            <h1>City: {{ hotel.city }}</h1>
-            <h1>Country: {{ hotel.country }}</h1>
-            <h1>Rating: {{ hotel.rating }}</h1>
-            <h1>Description: {{ hotel.description }}</h1>
+            <div>
+                <h1>Hotel: {{ hotel.name }}</h1>
+                <p>Address: {{ hotel.address }}</p>
+                <p>City: {{ hotel.city }}</p>
+                <p>Country: {{ hotel.country }}</p>
+                <p>Rating: {{ hotel.rating }}</p>
+                <p>Description: {{ hotel.description }}</p>
+            </div>
         </div>
-
     {% endfor %}
-
 {% endblock content %}
+
