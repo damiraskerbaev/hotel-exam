@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}
+    Rooms
+{% endblock title %}
+
+{% block style %}
+
+    <style>
+        
+        .image_class{
+        margin: left;
+        display: flex;
+        height: 200px;
+        }
+
+        h1 {
+        text-align: auto;
+        text-decoration: none;
+        }
+
+    </style>
+
+{% endblock style %}
+
+{% block content %}
+
+        
+        {% for room in rooms %}
+            <img src="{{ room.image.url }}" alt="" class="image_class">
+            <h1>Hotel name: {{ room.Hotel }}</h1>
+            <h1>Number room: {{ room.number }}</h1>
+            <h1>Capacity: {{ room.capacity }}</h1>
+            <h3>{% if room.is_used %}
+                <p>Used: YES</p>
+            {% else %}
+                <p>Used: NO</p>
+            {% endif %}
+            </h3>
+            <h2>Description: {{ room.description }}</h2>
+        {% endfor %}
+        
+        
+{% endblock content %}
