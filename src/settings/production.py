@@ -5,9 +5,9 @@ DEBUG = False
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'damirhotelapi$default',
-        'USER': 'damirhotelapi',
+        'NAME': 'hotelexam$default',
+        'USER': 'hotelexam',
         'PASSWORD': 'DaMiR2810',
-        'HOST': 'damirhotelapi.mysql.pythonanywhere-services.com'
+        'HOST': 'hotelexam.mysql.pythonanywhere-services.com'
     }
 }

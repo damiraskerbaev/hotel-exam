@@ -30,13 +30,18 @@
 {% endblock style %}
 
 {% block content %}
-    <div class="container">
-        {% if user.is_authenticated %}
-            <h1><a href="#">{{ user.username }}</a></h1>
-            <h1><a href="{% url 'logout' %}">Logout</a></h1>
-        {% else %}
-            <h1><a href="{% url 'LoginPage' %}">Login</a></h1>
-            <h1><a href="{% url 'signup' %}">Sign Up</a></h1>
-        {% endif %}
-    </div>
+<div class="dib" style="text-align: center;">
+
+    {% if user.is_authenticated %}
+    <h1><a>{{ user.username }}</a></h1>
+    <h1><a href="{% url 'logout' %}" style="color:#8ecf14; text-decoration: none;"><i class="fa-solid fa-right-from-bracket" style="color: #a06c0d;"></i>Logout</a></h1>
+     
+   {% else %}
+   <div style="margin: 30px;">
+    <h1><a href="{% url 'LoginPage' %}" style="text-decoration: none; color: #8ecf14;" >Login</a></h1>
+    <h2><a href="{% url 'signup' %}" style=" text-decoration: none; color: #8ecf14;">Signup</a></h2>
+  </div>
+ {% endif %}
+
+</div>
 {% endblock content %}

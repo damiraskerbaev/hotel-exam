@@ -6,19 +6,27 @@
     <title>
         {% block title %}
         {% endblock title %}
-    </title>
-    <style>
-        body {
-            background-color: rgb(255, 251, 7);
-        }
-    </style>
+    </title>    
 
     {% block style %}
     {% endblock style %}
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+
 </head>
+
+
+
 <body>
     {% include 'header.html' %}
     {% block content %}
     {% endblock content %}
 </body>
 </html>
+

@@ -4,35 +4,15 @@
     Sign Up
 {% endblock title %}
 
-{% block style %}
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        color: #333;
-    }
-    .form-container {
-        width: 80%;
-        margin: auto;
-        padding: 20px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-    }
-    .form-container form {
-        display: flex;
-        flex-direction: column;
-    }
-    .form-container form input[type="submit"] {
-        margin-top: 20px;
-    }
-</style>
-{% endblock style %}
 
 {% block content %}
-    <div class="form-container">
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="SignUp">
+    <div style="text-align: center; color: brown; background-color: rgb(112, 145, 69);">
+        <h1 style="color: #faebd7;">SignUp</h1>
+        <form method="post" enctype="multipart/form-data" style="text-align: center;">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-light">SINGUP</button>
+  
         </form>
     </div>
 {% endblock content %}
