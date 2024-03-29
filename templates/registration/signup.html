@@ -4,6 +4,21 @@
     Sign Up
 {% endblock title %}
 
+{% block style %}
+
+    <style>
+        input {
+            transition: all 0.3s ease-in-out;
+        }
+
+        input:focus {
+            transform: scale(1.1);
+        }
+    </style>
+
+
+{% endblock style %}
+
 
 {% block content %}
     <div style="text-align: center; color: brown; background-color: rgb(112, 145, 69);">
@@ -17,4 +32,14 @@
     </div>
 {% endblock content %}
 
+{% block script %}
+    <script>
+        document.querySelector('input').addEventListener('focus', function() {
+            this.style.backgroundColor = '#faebd7';
+        });
 
+        document.querySelector('input').addEventListener('blur', function() {
+            this.style.backgroundColor = '';
+        });
+    </script>
+{% endblock script %}

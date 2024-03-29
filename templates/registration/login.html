@@ -6,6 +6,16 @@
 
     <style>
 
+        body {
+            display: block;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
         .login {
             border: 1px solid black;
             width: 400px;
@@ -17,10 +27,15 @@
             background-position: center;
             overflow: hidden;
             text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+            justify-content: center;
+            align-items: center;
         }
 
         form {
-            display: block;
+            display: flex;
             box-sizing: border-box;
             padding: 40px;
             width: 100%;
@@ -30,6 +45,7 @@
             display: flex;
             gap: 5px;
             text-align: center;
+            align-items: center;
         }
 
         h1 {
@@ -40,16 +56,26 @@
             text-align: center;
         }
 
-        input {
-            background: rgba(255, 255, 255, 0.3);
-            height: 40px;
-            line-height: 40px;
-            border-radius: 20px;
-            padding: 0px 20px;
-            border: none;
-            margin-bottom: 20px;
-            color: white;
-            text-align: center;
+        .login input {
+        transition: all 1s ease;
+        justify-content: center;
+        }
+
+        .login input:focus {
+        transform: scale(1.1);
+        background-color: rgba(255, 255, 255, 0.5);
+        align-items: center;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
     </style>
@@ -71,3 +97,14 @@
     </div>
 {% endblock content %}
 
+{% block script %}
+    <script>
+        document.querySelector('.login').addEventListener('mouseover', function() {
+            this.style.transform = 'scale(1.05)';
+        });
+
+        document.querySelector('.login').addEventListener('mouseout', function() {
+            this.style.transform = 'scale(1)';
+        });
+    </script>
+{% endblock script %}

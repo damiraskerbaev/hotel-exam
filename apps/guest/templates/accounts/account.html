@@ -12,10 +12,29 @@
         color: #333;
     }
     .container {
-        width: 80%;
-        margin: auto;
-        padding: 20px;
+    transition: color 0.5s;
     }
+
+    .container:hover {
+    color: blue;
+    }
+
+    @keyframes myAnimation {
+        0% {
+            color: red;
+        }
+        50% {
+            color: green;
+        }
+        100% {
+            color: blue;
+        }
+    }
+
+    .animated-element {
+        animation: myAnimation 2s infinite;
+    }
+
     h1 {
         color: #444;
     }

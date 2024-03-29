@@ -6,19 +6,28 @@
 {% block style %}
 <style>
     .hotel-container {
-        display: flex;
-        margin-bottom: 20px;
-    }
+    display: flex;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }   
+
     .hotel-container img {
-        height: 300px;
-        margin-right: 20px;
+    height: 300px;
+    margin-right: 20px;
+    transition: transform 0.3s ease;
     }
-    .hotel-container div {
-        flex-grow: 1;
+
+    .hotel-container img:hover {
+    transform: scale(1.1);
     }
+
     .hotel-container h1, .hotel-container p {
-        font-size: 25px;
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #333;
     }
+
 </style>
 {% endblock style %}
 
